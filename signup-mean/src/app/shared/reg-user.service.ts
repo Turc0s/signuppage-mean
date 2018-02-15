@@ -25,4 +25,9 @@ export class RegUserService {
                 .map(res => res.json());
   }
 
+  deleteRegUser(id: any) {
+    return this.http.delete("http://localhost:3000/api/reguser/"+id)
+                    .map(res => res.json());
+  }
+
 }

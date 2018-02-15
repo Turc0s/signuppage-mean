@@ -14,13 +14,19 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { RegUserService } from './shared/reg-user.service';
 import { ShowinfoComponent } from './main/showinfo/showinfo.component';
 import { ChangeinfoComponent } from './main/changeinfo/changeinfo.component';
+import { TesteditinfoComponent } from './main/testeditinfo/testeditinfo.component';
+import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 const appRoutes: Routes = [
   { path: "", component: HelloPageComponent },
   { path: "loginpage", component: LoginPageComponent },
   { path: "main", component: MainComponent },
   { path: "signup", component: SignupPageComponent },
-  { path: "registeredUsers", component: RegUsersComponent }
+  { path: "registeredUsers", component: RegUsersComponent },
+  { path: "editreguser/:id", component: TesteditinfoComponent },
+  { path: "shopping-list", component: ShoppingListComponent}
 ];
 
 @NgModule({
@@ -33,7 +39,10 @@ const appRoutes: Routes = [
     RegUsersComponent,
     SignupPageComponent,
     ShowinfoComponent,
-    ChangeinfoComponent
+    ChangeinfoComponent,
+    TesteditinfoComponent,
+    ShoppingListComponent,
+    ShoppingEditComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +50,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [RegUserService],
+  providers: [RegUserService, ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
