@@ -1,3 +1,18 @@
-<p>
-  reg-users works!
-</p>
+<div class="text-center">
+  <h2>Registered Users</h2>
+</div>
+<hr>
+<table class="table table-sm table-hover">
+  <tr>
+    <td><b>First Name</b></td>
+    <td><b>Last Name</b></td>
+    <td><b>Username</b></td>
+    <td><b>Email</b></td>
+  </tr>
+  <tr *ngFor="let regUser of regUserList">
+    <td>{{ regUser.fname }}</td>
+    <td>{{ regUser.lname }}</td>
+    <td>{{ regUser.username }}</td>
+    <td>{{ regUser.email }}</td>
+  </tr>
+</table>

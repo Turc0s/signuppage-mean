@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegUser } from '../shared/reg-user.model';
 
 @Component({
   selector: 'app-reg-users',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reg-users.component.css']
 })
 export class RegUsersComponent implements OnInit {
+
+  regUserList: RegUser[];
 
   constructor() { }
 

@@ -20,7 +20,6 @@ const appRoutes: Routes = [
   { path: "registeredUsers", component: RegUsersComponent }
 ];
 
-
 @NgModule({
   declarations: [
     AppComponent,
