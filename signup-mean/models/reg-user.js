@@ -16,7 +16,7 @@ const RegUserSchema = mongoose.Schema({
     }
 });
 
-var RegUser = module.exports = mongoose.model("Reg-user", RegUserSchema);
+var RegUser = module.exports = mongoose.model("Reg_user", RegUserSchema);
 
 // Get registered users
 module.exports.getRegUsers = (callback, limit) => {

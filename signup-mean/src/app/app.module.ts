@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpModule } from "@angular/http";
 import { RouterModule, Routes } from "@angular/router";
 
 import { AppComponent } from './app.component';
@@ -11,6 +11,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { MainComponent } from './main/main.component';
 import { RegUsersComponent } from './reg-users/reg-users.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
+import { RegUserService } from './shared/reg-user.service';
 
 const appRoutes: Routes = [
   { path: "", component: HelloPageComponent },
@@ -33,10 +34,10 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
+    HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [RegUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

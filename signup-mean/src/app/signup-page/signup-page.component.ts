@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
+import { RegUserService } from '../shared/reg-user.service';
+import { RegUser } from '../shared/reg-user.model';
 
 @Component({
   selector: 'app-signup-page',
@@ -9,9 +11,13 @@ import { NgForm } from '@angular/forms/src/directives/ng_form';
 })
 export class SignupPageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  reguserList: RegUser[];
+
+  constructor(private router: Router,
+              private _reguserService: RegUserService) { }
 
   ngOnInit() {
+    this._reguserService.getRegUsers();
   }
 
   backToLogin() {
@@ -19,11 +25,22 @@ export class SignupPageComponent implements OnInit {
   }
 
   onRegUserSubmit(regForm: NgForm) {
-    
+    console.log("onRegUserSubmit()");
+    const newRegUser = {
+      first_name: this._reguserService.selectedRegUser.first_name,
+      last_name: this._reguserService.selectedRegUser.last_name,
+      phone: this._reguserService.selectedRegUser.phone 
+    }
+    this._reguserService.addRegUser(newRegUser)
+              .subscribe(regUser => {
+                // this.reguserList.push(regUser);
+                this._reguserService.getRegUsers();
+                regForm.reset();
+              });
   }
 
   onResetRegForm(regForm: NgForm){
-
+    
   }
 
 }

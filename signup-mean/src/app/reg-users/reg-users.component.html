@@ -6,13 +6,11 @@
   <tr>
     <td><b>First Name</b></td>
     <td><b>Last Name</b></td>
-    <td><b>Username</b></td>
-    <td><b>Email</b></td>
+    <td><b>Phone</b></td>
   </tr>
   <tr *ngFor="let regUser of regUserList">
-    <td>{{ regUser.fname }}</td>
-    <td>{{ regUser.lname }}</td>
-    <td>{{ regUser.username }}</td>
-    <td>{{ regUser.email }}</td>
+    <td>{{ regUser.first_name }}</td>
+    <td>{{ regUser.last_name }}</td>
+    <td>{{ regUser.phone }}</td>
   </tr>
 </table>

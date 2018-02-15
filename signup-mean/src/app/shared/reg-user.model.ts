@@ -1,7 +1,6 @@
 export class RegUser {
     _id: any;
-    fname: string;
-    lname: string;
-    username: string;
-    email: string;
+    first_name: string;
+    last_name: string;
+    phone: number;
 }

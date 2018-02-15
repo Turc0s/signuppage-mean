@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegUser } from '../shared/reg-user.model';
+import { RegUserService } from '../shared/reg-user.service';
 
 @Component({
   selector: 'app-reg-users',
@@ -9,10 +10,23 @@ import { RegUser } from '../shared/reg-user.model';
 export class RegUsersComponent implements OnInit {
 
   regUserList: RegUser[];
+  // regUser: RegUser;
+  // first_name: string;
+  // last_name: string;
+  // phone: number;
 
-  constructor() { }
+  constructor(private _reguserService: RegUserService) { }
 
   ngOnInit() {
+    this.getAllRegUsers();
+  }
+
+  getAllRegUsers() {
+    console.log("GetAllRegUsers()");
+    this._reguserService.getRegUsers()
+            .subscribe(regusers => {
+              this.regUserList = regusers;
+            })
   }
 
 }
