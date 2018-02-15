@@ -11,7 +11,8 @@
         name="first_name" 
         #name="ngModel" 
         [(ngModel)]="_reguserService.selectedRegUser.first_name"
-        placeholder="First Name">
+        placeholder="First Name"
+        required>
       </div>
 
       <div class="form-group">
@@ -21,7 +22,8 @@
         name="last_name"
         #name="ngModel"
         [(ngModel)]="_reguserService.selectedRegUser.last_name"
-        placeholder="Last Name">
+        placeholder="Last Name"
+        required>
       </div>
 
       <div class="form-group">
@@ -31,12 +33,13 @@
         name="phone"
         #name="ngModel"
         [(ngModel)]="_reguserService.selectedRegUser.phone"
-        placeholder="Phone">
+        placeholder="Phone"
+        required>
       </div>
 
-      <button type="submit" class="btn btn-danger pull-right margin-left-custom">Sign Up</button>
+      <button type="submit" class="btn btn-danger pull-right margin-left-custom" [disabled]="!regUserForm.valid">Sign Up</button>
       <button type="button" class="btn btn-warning pull-right margin-left-custom" (click)="onResetRegForm()">Reset</button>
-      <button type="submit" class="btn btn-default pull-right margin-left-custom" (click)="backToLogin()">Back</button>
+      <button type="button" class="btn btn-default pull-right margin-left-custom" (click)="backToLogin()">Back</button>
     </form>
   </div>
 </div>

@@ -40,7 +40,15 @@ export class SignupPageComponent implements OnInit {
   }
 
   onResetRegForm(regForm: NgForm){
-    
+    if(regForm != null) {
+      regForm.reset();
+    }
+    this._reguserService.selectedRegUser = {
+      _id: null,
+      first_name: "",
+      last_name: "",
+      phone: null
+    }
   }
-
+  
 }
