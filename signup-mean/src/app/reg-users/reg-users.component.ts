@@ -26,7 +26,7 @@ export class RegUsersComponent implements OnInit {
     this._reguserService.getRegUsers()
             .subscribe(regusers => {
               this.regUserList = regusers;
-            })
+            });
   }
 
 }

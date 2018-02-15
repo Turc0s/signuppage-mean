@@ -1,0 +1,22 @@
+<div class="text-center">
+  <h2>User Informations</h2>
+</div>
+<hr>
+<table class="table table-sm table-hover">
+  <tr>
+    <td><b>First Name</b></td>
+    <td><b>Last Name</b></td>
+    <td><b>Phone No.</b></td>
+  </tr>
+  <tr *ngFor="let reguser of reguserList">
+    <td>{{ reguser.first_name }}</td>
+    <td>{{ reguser.last_name }}</td>
+    <td>{{ reguser.phone }}</td>
+    <a class="btn">
+      <i class="fa fa-pencil-square-o" (click)="onEdit(user)"></i>
+    </a>
+    <a class="btn">
+        <i class="fa fa-trash-o" (click)="onDelete(user.$key)"></i>
+      </a>
+  </tr>
+</table>

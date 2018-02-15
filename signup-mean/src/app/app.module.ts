@@ -12,6 +12,8 @@ import { MainComponent } from './main/main.component';
 import { RegUsersComponent } from './reg-users/reg-users.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { RegUserService } from './shared/reg-user.service';
+import { ShowinfoComponent } from './main/showinfo/showinfo.component';
+import { ChangeinfoComponent } from './main/changeinfo/changeinfo.component';
 
 const appRoutes: Routes = [
   { path: "", component: HelloPageComponent },
@@ -29,7 +31,9 @@ const appRoutes: Routes = [
     LoginPageComponent,
     MainComponent,
     RegUsersComponent,
-    SignupPageComponent
+    SignupPageComponent,
+    ShowinfoComponent,
+    ChangeinfoComponent
   ],
   imports: [
     BrowserModule,

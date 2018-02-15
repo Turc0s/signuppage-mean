@@ -1,0 +1,52 @@
+
+<div class="text-center">
+  <h2>User Form</h2>
+</div>
+<hr>
+<form #userinfoForm="ngForm" (ngSubmit)="onSubmit(userinfoForm)">
+  <!-- <input 
+  type="hidden"
+  name="$key" #$key="ngModel" [(ngModel)]="_userService.selectedUser.$key"> -->
+  <div class="form-group">
+    <label>First Name</label>
+    <input 
+    class="form-control"
+   
+    placeholder="First Name"
+    required>
+  </div>
+  <!-- name="name"
+  #name="ngModel"
+  [(ngModel)]="_userService.selectedUser.name" -->
+
+  <div class="form-group">
+    <label>Last Name</label>
+    <input 
+    class="form-control"
+   
+    placeholder="Last Name"
+    required>
+  </div>
+  <!-- name="position"
+  #name="ngModel"
+  [(ngModel)]="_userService.selectedUser.position" -->
+
+  <div class="form-group">
+    <label>Phone No.</label>
+    <input 
+    class="form-control"
+ 
+    placeholder="Phone"
+    required>
+  </div>
+  <!-- name="office"
+  #name="ngModel"
+  [(ngModel)]="_userService.selectedUser.office" -->
+
+  <button class="btn btn-success" type="submit" [disabled]="!userinfoForm.valid">
+    <i class="fa fa-floppy-o"></i>
+    Submit</button>
+  <button class="btn btn-warning" type="button" (click)="resetForm(userinfoForm)">
+    <i class="fa fa-repeat"></i>
+    Reset</button>
+</form>
