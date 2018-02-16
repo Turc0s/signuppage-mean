@@ -40,7 +40,6 @@ export class ChangeinfoComponent implements OnInit {
               .subscribe(regUser => {
                 // this.reguserList.push(regUser);
                 this._reguserService.getRegUsers();
-                // this.resetForm(regForm);
               });
   }
 
@@ -48,7 +47,6 @@ export class ChangeinfoComponent implements OnInit {
     this._reguserService.updateRegUser(reguser._id, reguser)
                   .subscribe(reguser => {
                     this._reguserService.getRegUsers();
-                    // this.resetForm(regForm);
                   });
   }
 

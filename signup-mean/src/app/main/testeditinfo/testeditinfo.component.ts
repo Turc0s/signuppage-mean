@@ -17,16 +17,16 @@ export class TesteditinfoComponent implements OnInit {
               private http: Http) { }
 
   ngOnInit() {
-    this.getRegUserDetail(this.actRoute.snapshot.params["id"]);
+    // this.getRegUserDetail(this.actRoute.snapshot.params["id"]);
   }
 
-  getRegUserDetail(_id) {
-    this.http.get("/api/reguser/"+_id)
-            .subscribe(
-              data => {
+  // getRegUserDetail(_id) {
+  //   this.http.get("/api/reguser/"+_id)
+  //           .subscribe(
+  //             data => {
                 
-              }
-          );
-  }
+  //             }
+  //         );
+  // }
 
 }

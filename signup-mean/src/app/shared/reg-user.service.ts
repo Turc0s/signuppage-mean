@@ -25,6 +25,7 @@ export class RegUserService {
                 .map(res => res.json());
   }
 
+  // update the selected reg user
   updateRegUser(id, reguser) {
     var headers = new Headers();
     headers.append("Content-Type", "application/json");
@@ -32,6 +33,7 @@ export class RegUserService {
                 .map(res =>  res.json());
   }
 
+  // delete registered user
   deleteRegUser(id: any) {
     return this.http.delete("http://localhost:3000/api/reguser/"+id)
                     .map(res => res.json());
