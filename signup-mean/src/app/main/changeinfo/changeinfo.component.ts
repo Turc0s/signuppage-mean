@@ -22,6 +22,15 @@ export class ChangeinfoComponent implements OnInit {
 
   onSubmit(regForm: NgForm) {
     console.log("onSubmit()");
+    if(regForm.value._id == null)
+      this.addNewRegUser(regForm.value);
+    else
+      this.updateRegUser(regForm.value, regForm);
+
+    this.resetForm(regForm);
+  }
+
+  addNewRegUser(regForm: NgForm) {
     const newRegUser = {
       first_name: this._reguserService.selectedRegUser.first_name,
       last_name: this._reguserService.selectedRegUser.last_name,
@@ -31,8 +40,16 @@ export class ChangeinfoComponent implements OnInit {
               .subscribe(regUser => {
                 // this.reguserList.push(regUser);
                 this._reguserService.getRegUsers();
-                regForm.reset();
+                // this.resetForm(regForm);
               });
+  }
+
+  updateRegUser(reguser: RegUser, regForm: NgForm) {
+    this._reguserService.updateRegUser(reguser._id, reguser)
+                  .subscribe(reguser => {
+                    this._reguserService.getRegUsers();
+                    // this.resetForm(regForm);
+                  });
   }
 
   resetForm(regForm: NgForm){

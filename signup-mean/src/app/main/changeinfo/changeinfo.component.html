@@ -4,9 +4,9 @@
 </div>
 <hr>
 <form #userinfoForm="ngForm" (ngSubmit)="onSubmit(userinfoForm)">
-  <!-- <input 
+  <input 
   type="hidden"
-  name="$key" #$key="ngModel" [(ngModel)]="_userService.selectedUser.$key"> -->
+  name="_id" #_id="ngModel" [(ngModel)]="_reguserService.selectedRegUser._id">
   <div class="form-group">
     <label>First Name</label>
     <input 
