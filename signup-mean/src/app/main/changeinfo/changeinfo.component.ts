@@ -17,15 +17,18 @@ export class ChangeinfoComponent implements OnInit {
               private _reguserService: RegUserService) { }
 
   ngOnInit() {
-    this._reguserService.getRegUsers();
+    // this._reguserService.getRegUsers();
+    this.showAllRegUsers();
   }
 
   onSubmit(regForm: NgForm) {
     console.log("onSubmit()");
-    if(regForm.value._id == null)
+    if(regForm.value._id == null) {
       this.addNewRegUser(regForm.value);
-    else
+    }
+    else {
       this.updateRegUser(regForm.value, regForm);
+    }
 
     this.resetForm(regForm);
   }
@@ -40,6 +43,7 @@ export class ChangeinfoComponent implements OnInit {
               .subscribe(regUser => {
                 // this.reguserList.push(regUser);
                 this._reguserService.getRegUsers();
+                this.showAllRegUsers();
               });
   }
 
@@ -47,7 +51,16 @@ export class ChangeinfoComponent implements OnInit {
     this._reguserService.updateRegUser(reguser._id, reguser)
                   .subscribe(reguser => {
                     this._reguserService.getRegUsers();
+                    this.showAllRegUsers();
                   });
+  }
+
+  showAllRegUsers() {
+    console.log("showAllRegUsers() in changeinfo");
+    this._reguserService.getRegUsers()
+            .subscribe(regusers => {
+              this.reguserList = regusers;
+            });
   }
 
   resetForm(regForm: NgForm){

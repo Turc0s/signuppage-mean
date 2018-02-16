@@ -1,0 +1,16 @@
+<div class="text-center">
+  <h2>Registered Users ----</h2>
+</div>
+<hr>
+<table class="table table-sm table-hover">
+  <tr>
+    <td><b>First Name</b></td>
+    <td><b>Last Name</b></td>
+    <td><b>Phone</b></td>
+  </tr>
+  <tr *ngFor="let regUser of regUserList">
+    <td>{{ regUser.first_name }}</td>
+    <td>{{ regUser.last_name }}</td>
+    <td>{{ regUser.phone }}</td>
+  </tr>
+</table>

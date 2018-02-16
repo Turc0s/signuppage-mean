@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { RegUser } from '../shared/reg-user.model';
-import { RegUserService } from '../shared/reg-user.service';
+import { RegUser } from '../../shared/reg-user.model';
+import { RegUserService } from '../../shared/reg-user.service';
 
 @Component({
-  selector: 'app-reg-users',
-  templateUrl: './reg-users.component.html',
-  styleUrls: ['./reg-users.component.css']
+  selector: 'app-regtest',
+  templateUrl: './regtest.component.html',
+  styleUrls: ['./regtest.component.css']
 })
-export class RegUsersComponent implements OnInit {
+export class RegtestComponent implements OnInit {
 
   regUserList: RegUser[];
 

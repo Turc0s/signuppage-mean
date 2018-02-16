@@ -15,6 +15,7 @@ import { RegUserService } from './shared/reg-user.service';
 import { ShowinfoComponent } from './main/showinfo/showinfo.component';
 import { ChangeinfoComponent } from './main/changeinfo/changeinfo.component';
 import { TesteditinfoComponent } from './main/testeditinfo/testeditinfo.component';
+import { RegtestComponent } from './signup-page/regtest/regtest.component';
 
 const appRoutes: Routes = [
   { path: "", component: HelloPageComponent },
@@ -22,7 +23,7 @@ const appRoutes: Routes = [
   { path: "main", component: MainComponent },
   { path: "signup", component: SignupPageComponent },
   { path: "registeredUsers", component: RegUsersComponent },
-  { path: "editreguser/:id", component: TesteditinfoComponent }
+  { path: "editreguser/:id", component: TesteditinfoComponent },
 ];
 
 @NgModule({
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
     ShowinfoComponent,
     ChangeinfoComponent,
     TesteditinfoComponent,
+    RegtestComponent,
   ],
   imports: [
     BrowserModule,
