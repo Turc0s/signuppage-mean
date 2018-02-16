@@ -18,6 +18,8 @@ import { TesteditinfoComponent } from './main/testeditinfo/testeditinfo.componen
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { TestformComponent } from './testform/testform.component';
+import { EditformComponent } from './testform/editform/editform.component';
 
 const appRoutes: Routes = [
   { path: "", component: HelloPageComponent },
@@ -26,7 +28,8 @@ const appRoutes: Routes = [
   { path: "signup", component: SignupPageComponent },
   { path: "registeredUsers", component: RegUsersComponent },
   { path: "editreguser/:id", component: TesteditinfoComponent },
-  { path: "shopping-list", component: ShoppingListComponent}
+  { path: "shopping-list", component: ShoppingListComponent},
+  { path: "testform", component: TestformComponent}
 ];
 
 @NgModule({
@@ -42,7 +45,9 @@ const appRoutes: Routes = [
     ChangeinfoComponent,
     TesteditinfoComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    TestformComponent,
+    EditformComponent
   ],
   imports: [
     BrowserModule,

@@ -25,6 +25,12 @@ export class ShowinfoComponent implements OnInit {
             });
   }
 
+  onEdit(reguser: RegUser) {
+    console.log("in onEdit()");
+    // this._reguserService.selectedRegUser = reguser;
+    this._reguserService.selectedRegUser = Object.assign({}, reguser);
+  }
+
   onDeleteRegUser(id: any) {
     var regList = this.reguserList;
     this._reguserService.deleteRegUser(id)

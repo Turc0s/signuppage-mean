@@ -13,7 +13,7 @@
     <td>{{ reguser.last_name }}</td>
     <td>{{ reguser.phone }}</td>
     <a class="btn">
-      <i class="fa fa-pencil-square-o" [routerLink]="['/editreguser', reguser._id]"></i>
+      <i class="fa fa-pencil-square-o" (click)="onEdit(reguser)" ></i>
     </a>
     <a class="btn">
         <i class="fa fa-trash-o" (click)="onDeleteRegUser(reguser._id)"></i>
@@ -23,3 +23,5 @@
 
 <!-- (click)="onDeleteRegUser(reguser._id)" -->
 <!-- (click)="onEdit(user)"  -->
+
+<!-- [routerLink]="['/editreguser', reguser._id]" -->
