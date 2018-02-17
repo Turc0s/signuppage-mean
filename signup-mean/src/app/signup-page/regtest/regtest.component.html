@@ -8,7 +8,7 @@
     <td><b>Last Name</b></td>
     <td><b>Phone</b></td>
   </tr>
-  <tr *ngFor="let regUser of regUserList">
+  <tr *ngFor="let regUser of _reguserService.reguserList">
     <td>{{ regUser.first_name }}</td>
     <td>{{ regUser.last_name }}</td>
     <td>{{ regUser.phone }}</td>

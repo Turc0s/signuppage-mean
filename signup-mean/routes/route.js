@@ -10,7 +10,6 @@ router.get("/regusers", (req, res) => {
         if (err) {
             throw err;
         }
-        console.log("inside getRegUsers()");
         res.json(regusers);
     });
 });
@@ -21,7 +20,6 @@ router.get("/reguser/:id", (req, res) => {
         if (err) {
             throw err;
         }
-        console.log("Get single reguser");
         res.json(reguser);
     });
 });

@@ -11,13 +11,11 @@ import { RegUser } from '../shared/reg-user.model';
 })
 export class SignupPageComponent implements OnInit {
 
-  reguserList: RegUser[];
-
   constructor(private router: Router,
               private _reguserService: RegUserService) { }
 
   ngOnInit() {
-    this._reguserService.getRegUsers();
+    this._reguserService.getAllRegUsersService();
   }
 
   backToLogin() {
@@ -25,7 +23,6 @@ export class SignupPageComponent implements OnInit {
   }
 
   onRegUserSubmit(regForm: NgForm) {
-    console.log("onRegUserSubmit() signup");
     const newRegUser = {
       first_name: this._reguserService.selectedRegUser.first_name,
       last_name: this._reguserService.selectedRegUser.last_name,
@@ -34,21 +31,11 @@ export class SignupPageComponent implements OnInit {
     this._reguserService.addRegUser(newRegUser)
               .subscribe(regUser => {
                 // this.reguserList.push(regUser);
-                // this.getAllRegUsers();
-                // console.log("getAllRegUsers() in onRegUserSubmit subscribe");
                 this._reguserService.getRegUsers();
                 regForm.reset();
               });
-    console.log("onRegUserSubmit done");
+    this._reguserService.getAllRegUsersService();
     
-  }
-
-  getAllRegUsers() {
-    console.log("GetAllRegUsers() signup");
-    this._reguserService.getRegUsers()
-            .subscribe(regusers => {
-              this.reguserList = regusers;
-            });
   }
 
   onResetRegForm(regForm: NgForm){
