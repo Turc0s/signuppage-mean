@@ -16,11 +16,6 @@ import { ShowinfoComponent } from './main/showinfo/showinfo.component';
 import { ChangeinfoComponent } from './main/changeinfo/changeinfo.component';
 import { TesteditinfoComponent } from './main/testeditinfo/testeditinfo.component';
 import { RegtestComponent } from './signup-page/regtest/regtest.component';
-import { TodosComponent } from './test/todos/todos.component';
-import { TodoService } from './test/todo.service';
-import { TodotestComponent } from './test2/todotest/todotest.component';
-import { TodotestService } from './test2/todotest.service';
-import { Todotest2Component } from './test2/todotest2/todotest2.component';
 
 const appRoutes: Routes = [
   { path: "", component: HelloPageComponent },
@@ -29,9 +24,6 @@ const appRoutes: Routes = [
   { path: "signup", component: SignupPageComponent },
   { path: "registeredUsers", component: RegUsersComponent },
   { path: "editreguser/:id", component: TesteditinfoComponent },
-  { path: "todos", component: TodosComponent },
-  { path: "todostest", component: TodotestComponent },
-  { path: "todostest2", component: Todotest2Component }
 ];
 
 @NgModule({
@@ -47,9 +39,6 @@ const appRoutes: Routes = [
     ChangeinfoComponent,
     TesteditinfoComponent,
     RegtestComponent,
-    TodosComponent,
-    TodotestComponent,
-    Todotest2Component,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +46,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [RegUserService, TodoService, TodotestService],
+  providers: [RegUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

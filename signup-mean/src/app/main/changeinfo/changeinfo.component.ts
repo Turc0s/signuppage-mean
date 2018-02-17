@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
 import { RegUserService } from '../../shared/reg-user.service';
 import { RegUser } from '../../shared/reg-user.model';
-import { TodotestService } from '../../test2/todotest.service';
 
 @Component({
   selector: 'app-changeinfo',
@@ -12,14 +11,10 @@ import { TodotestService } from '../../test2/todotest.service';
 })
 export class ChangeinfoComponent implements OnInit {
   
-  // reguserList: RegUser[];
-
   constructor(private router: Router,
               private _reguserService: RegUserService) { }
 
   ngOnInit() {
-    // this._reguserService.getRegUsers();
-    // this.showAllRegUsers();
     this._reguserService.getAllRegUsersService();
   }
 
@@ -43,9 +38,7 @@ export class ChangeinfoComponent implements OnInit {
     }
     this._reguserService.addRegUser(newRegUser)
               .subscribe(regUser => {
-                // this.reguserList.push(regUser);
                 this._reguserService.getRegUsers();
-                // this.showAllRegUsers();
               });
               this._reguserService.getAllRegUsersService();
   }
@@ -54,19 +47,10 @@ export class ChangeinfoComponent implements OnInit {
     this._reguserService.updateRegUser(reguser._id, reguser)
                   .subscribe(reguser => {
                     this._reguserService.getRegUsers();
-                    // this.showAllRegUsers();
                   });
                   this._reguserService.getAllRegUsersService();
   }
-
-  // showAllRegUsers() {
-  //   console.log("showAllRegUsers() in changeinfo");
-  //   this._reguserService.getRegUsers()
-  //           .subscribe(regusers => {
-  //             this.reguserList = regusers;
-  //           });
-  // }
-
+  
   resetForm(regForm: NgForm){
     if(regForm != null) {
       regForm.reset();
