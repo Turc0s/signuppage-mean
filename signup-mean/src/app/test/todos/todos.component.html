@@ -1,0 +1,285 @@
+<!-- <h1>Add Tod</h1>
+<div class="form-group">
+  <input type="text" class="form-control input-lg" placeholder="Add Todo" autofocus #todoText>
+  <br>
+  <button class="btn btn-primary btn-block" (click)="addTodo($event, todoText)">Create</button>
+</div> -->
+
+<!-- $event,  -->
+<!-- 
+<h1>Add Tod</h1>
+<form #todoForm="ngForm" (ngSubmit)="onTodoSubmit(todoForm)">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-4">
+        <input 
+        type="text" 
+        class="form-control" 
+        name="text"
+        #name="ngModel" 
+        [(ngModel)]="_todoService.todos.text" 
+        placeholder="Add Todo"
+        >
+      </div>
+      <div class="col-md-4">
+        <input 
+        type="text" 
+        class="form-control" 
+        name="first_name"
+        #name="ngModel" 
+        [(ngModel)]="_todoService.todos.first_name" 
+        placeholder="Add first"
+        >
+      </div>
+      <div class="col-md-4">
+        <input 
+        type="text" 
+        class="form-control" 
+        name="last_name"
+        #name="ngModel" 
+        [(ngModel)]="_todoService.todos.last_name" 
+        placeholder="Add last"
+        >
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Create</button>
+    </div>
+  </div>
+</form>
+<hr>
+<br>
+
+<div class="row">
+  <div *ngFor="let todo of todos">
+    <div class="col-md-1">
+      <input type="checkbox">
+    </div>
+    <div class="col-md-7">
+      {{ todo.text }} -- {{ todo.first_name }} -- {{ todo.last_name }}
+    </div>
+    <div class="col-md-4">
+      <input type="button" class="btn btn-danger pull-right" value="Delete">
+      <input type="button" class="btn btn-default pull-right margin-right-custom" value="Edit">
+    </div>
+  </div>
+</div>
+ -->
+
+
+<!-- <h1>Add Tod</h1>
+<form #todoForm="ngForm" (ngSubmit)="onTodoSubmit($event, todoForm)">
+
+  <div class="form-group">
+    <label>Text</label>
+    <input class="form-control" name="phone" #name="ngModel" [(ngModel)]="todos.text" placeholder="Text">
+  </div>
+
+  <div class="form-group">
+    <label>First Name</label>
+    <input class="form-control" name="first_name" #name="ngModel" [(ngModel)]="todos.first_name" placeholder="First Name">
+  </div>
+
+  <div class="form-group">
+    <label>Last Name</label>
+    <input class="form-control" name="last_name" #name="ngModel" [(ngModel)]="todos.last_name" placeholder="Last Name">
+  </div>
+
+  <button type="submit" class="btn btn-danger pull-right">Create</button>
+</form> -->
+
+<!-- -->
+<!-- <form>
+  <div class="form-group">
+    <input type="text" class="form-control input-lg" placeholder="Add Todo" autofocus #todoText>
+    <br>
+    <button class="btn btn-primary btn-block" (click)="addTodo($event, todoText)">Create</button>
+  </div>
+</form>   -->
+
+<!-- --------------------------------------------- -->
+  <!-- <form #todoForm="ngForm" (ngSubmit)="onTodoSubmit($event, todoForm)">
+    <div class="form-group">
+      <input 
+      type="text"
+       class="form-control input-lg" 
+       placeholder="Add Todo" 
+       name="text"
+       #name="ngModel"
+       [(ngModel)]="todos.text">
+      <br>
+      <button type="submit" class="btn btn-primary btn-block">Create</button>
+    </div>
+  </form>  -->
+
+<!-- <form #todoForm="ngForm" (ngSubmit)="onTodoSubmit($event, todoForm)">
+  <div class="form-group">
+    <input 
+    type="text" 
+    class="form-control"
+    placeholder="Add Todo"
+    name="text"
+    #name="ngModel"
+    [(ngModel)]="todos.text"
+    >
+    <br>
+    <button type="submit" class="btn btn-primary btn-block">Create</button>
+  </div>
+</form> -->
+
+<!-- (click)="addTodo($event, todoText)" -->
+<!-- 
+<form #todoForm="ngForm" (ngSubmit)="onTodoSubmit(todoForm)">
+  <div class="form-group">
+    <input 
+    type="text" 
+    class="form-control"
+    placeholder="Add Todo"
+    name="text"
+    #name="ngModel"
+    [(ngModel)]="todos.text">
+    <br>
+    <button class="btn btn-primary btn-block">Create</button>
+  </div>
+</form>  
+
+ <div class="row">
+  <div *ngFor="let todo of todos">
+    <div class="col-md-1">
+      <input type="checkbox">
+    </div>
+    <div class="col-md-7">
+      {{ todo.text }}
+    </div>
+    <div class="col-md-4">
+      <input type="button" class="btn btn-danger pull-right" value="Delete">
+      <input type="button" class="btn btn-default pull-right margin-right-custom" value="Edit">
+    </div>
+  </div>
+</div> -->
+<!-- -->
+
+
+
+<!-- 
+<div class="row">
+  <div class="col-md-8">
+    <h3>Sign Up Page</h3>
+    <br>
+    <form #regUserForm="ngForm" (ngSubmit)="onRegUserSubmit(regUserForm)">
+
+      <div class="form-group">
+        <label>First Name</label>
+        <input class="form-control" name="first_name" #name="ngModel" [(ngModel)]="_reguserService.selectedRegUser.first_name" placeholder="First Name"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label>Last Name</label>
+        <input class="form-control" name="last_name" #name="ngModel" [(ngModel)]="_reguserService.selectedRegUser.last_name" placeholder="Last Name"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone</label>
+        <input class="form-control" name="phone" #name="ngModel" [(ngModel)]="_reguserService.selectedRegUser.phone" placeholder="Phone"
+          required>
+      </div>
+
+      <button type="submit" class="btn btn-danger pull-right margin-left-custom" [disabled]="!regUserForm.valid">Sign Up</button>
+      <button type="button" class="btn btn-warning pull-right margin-left-custom" (click)="onResetRegForm()">Reset</button>
+      <button type="button" class="btn btn-default pull-right margin-left-custom" (click)="backToLogin()">Back</button>
+    </form>
+  </div>
+</div>
+<hr>
+<app-regtest></app-regtest> -->
+
+
+
+
+
+<!-- 
+<h1>Add Tod</h1>
+<div class="form-group">
+  <input type="text" class="form-control input-lg" placeholder="Add Todo" autofocus #todoText>
+  <br>
+  <button class="btn btn-primary btn-block" (click)="addTodo($event, todoText)">Create</button>
+</div>
+
+<div class="row">
+  <div *ngFor="let todo of todos">
+    <div class="col-md-1">
+      <input type="checkbox">
+    </div>
+    <div class="col-md-7">
+      {{ todo.text }}
+    </div>
+    <div class="col-md-4">
+      <input type="button" class="btn btn-danger pull-right" value="Delete">
+      <input type="button" class="btn btn-default pull-right margin-right-custom" value="Edit">
+    </div>
+  </div>
+</div> -->
+
+
+<div class="row">
+    <div class="col-md-8">
+      <h3>Sign Up Page</h3>
+      <br>
+      <form #regUserForm="ngForm" (ngSubmit)="onRegUserSubmit(regUserForm)">
+  
+        <div class="form-group">
+          <label>First Name</label>
+          <input 
+          class="form-control"
+          name="first_name" 
+          #name="ngModel" 
+          [(ngModel)]="_reguserService.selectedRegUser.first_name"
+          placeholder="First Name"
+          required>
+        </div>
+  
+        <div class="form-group">
+          <label>Last Name</label>
+          <input 
+          class="form-control"
+          name="last_name"
+          #name="ngModel"
+          [(ngModel)]="_reguserService.selectedRegUser.last_name"
+          placeholder="Last Name"
+          required>
+        </div>
+  
+        <div class="form-group">
+          <label>Phone</label>
+          <input 
+          class="form-control" 
+          name="phone"
+          #name="ngModel"
+          [(ngModel)]="_reguserService.selectedRegUser.phone"
+          placeholder="Phone"
+          required>
+        </div>
+  
+        <button type="submit" class="btn btn-danger">Sign Up</button>
+      </form>
+    </div>
+  </div>
+  <hr>
+
+  <div class="text-center">
+      <h2>Registered Users ----</h2>
+    </div>
+    <hr>
+    <table class="table table-sm table-hover">
+      <tr>
+        <td><b>First Name</b></td>
+        <td><b>Last Name</b></td>
+        <td><b>Phone</b></td>
+      </tr>
+      <tr *ngFor="let regUser of regUserList">
+        <td>{{ regUser.first_name }}</td>
+        <td>{{ regUser.last_name }}</td>
+        <td>{{ regUser.phone }}</td>
+      </tr>
+    </table>
+    

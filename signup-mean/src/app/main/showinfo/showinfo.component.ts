@@ -9,30 +9,40 @@ import { RegUserService } from '../../shared/reg-user.service';
 })
 export class ShowinfoComponent implements OnInit {
 
-  reguserList: RegUser[];
+  // reguserList: RegUser[];
 
   constructor(private _reguserService: RegUserService) { }
 
   ngOnInit() {
-    this.getAllRegUsers();
+    this._reguserService.getAllRegUsersService();
+    // this.getAllRegUsers();
+    // console.log("get all users ng init showinfo");
+    // console.log(this.getAllRegUsers());
   }
 
-  getAllRegUsers() {
-    console.log("getAllRegUsers() in showinfo");
-    this._reguserService.getRegUsers()
-            .subscribe(regusers => {
-              this.reguserList = regusers;
-            });
-  }
+  // getAllRegUsers() {
+  //   console.log("getAllRegUsers() in showinfo");
+  //   this._reguserService.getRegUsers()
+  //           .subscribe(regusers => {
+  //             this.reguserList = regusers;
+  //             console.log("get all users show info method, subscribe");
+  //             console.log(regusers);
+  //           });
+  // }
 
   onEdit(reguser: RegUser) {
     console.log("in onEdit()");
     // this._reguserService.selectedRegUser = reguser;
+    this._reguserService.getAllRegUsersService();
     this._reguserService.selectedRegUser = Object.assign({}, reguser);
+    this._reguserService.getAllRegUsersService();
+    // this.getAllRegUsers();
+    // console.log("getAllRegUsers() in onEdit() showinfo")
   }
 
   onDeleteRegUser(id: any) {
-    var regList = this.reguserList;
+    var regList = this._reguserService.reguserList;
+    // var regList = this.reguserList;
     this._reguserService.deleteRegUser(id)
               .subscribe(data => {
                 if(data.n == 1) {

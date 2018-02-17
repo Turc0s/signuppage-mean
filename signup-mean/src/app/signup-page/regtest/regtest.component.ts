@@ -14,11 +14,11 @@ export class RegtestComponent implements OnInit {
   constructor(private _reguserService: RegUserService) { }
 
   ngOnInit() {
-    this.getAllRegUsers();
+    // this.getAllRegUsers();
   }
 
   getAllRegUsers() {
-    console.log("GetAllRegUsers()");
+    console.log("GetAllRegUsers() regtest");
     this._reguserService.getRegUsers()
             .subscribe(regusers => {
               this.regUserList = regusers;

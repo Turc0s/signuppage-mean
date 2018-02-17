@@ -39,4 +39,11 @@ export class RegUserService {
                     .map(res => res.json());
   }
 
+  getAllRegUsersService() {
+    this.getRegUsers()
+              .subscribe(regusers => {
+                this.reguserList = regusers;
+              });
+  }
+
 }

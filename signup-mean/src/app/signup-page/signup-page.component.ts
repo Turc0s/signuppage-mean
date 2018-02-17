@@ -25,7 +25,7 @@ export class SignupPageComponent implements OnInit {
   }
 
   onRegUserSubmit(regForm: NgForm) {
-    console.log("onRegUserSubmit()");
+    console.log("onRegUserSubmit() signup");
     const newRegUser = {
       first_name: this._reguserService.selectedRegUser.first_name,
       last_name: this._reguserService.selectedRegUser.last_name,
@@ -34,9 +34,21 @@ export class SignupPageComponent implements OnInit {
     this._reguserService.addRegUser(newRegUser)
               .subscribe(regUser => {
                 // this.reguserList.push(regUser);
+                // this.getAllRegUsers();
+                // console.log("getAllRegUsers() in onRegUserSubmit subscribe");
                 this._reguserService.getRegUsers();
                 regForm.reset();
               });
+    console.log("onRegUserSubmit done");
+    
+  }
+
+  getAllRegUsers() {
+    console.log("GetAllRegUsers() signup");
+    this._reguserService.getRegUsers()
+            .subscribe(regusers => {
+              this.reguserList = regusers;
+            });
   }
 
   onResetRegForm(regForm: NgForm){
