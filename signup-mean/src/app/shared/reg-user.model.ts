@@ -4,5 +4,4 @@ export class RegUser {
     last_name: string;
     phone: number;
 
-    // constructor(public first_name: string, public last_name: string, public phone: number){}
 }

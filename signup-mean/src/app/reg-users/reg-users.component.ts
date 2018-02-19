@@ -20,7 +20,7 @@ export class RegUsersComponent implements OnInit {
   getAllRegUsers() {
     console.log("GetAllRegUsers() in regUsers");
     this._reguserService.getRegUsers()
-            .subscribe(regusers => {
+            .subscribe((regusers: RegUser[]) => {
               this.regUserList = regusers;
             });
   }

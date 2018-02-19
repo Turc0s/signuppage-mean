@@ -26,13 +26,13 @@ export class ShowinfoComponent implements OnInit {
     var regList = this._reguserService.reguserList;
     this._reguserService.deleteRegUser(id)
               .subscribe(data => {
-                if(data.n == 1) {
                   for(var i = 0; i < regList.length; i++) {
                     if(regList[i]._id == id) {
                       regList.splice(i,1);
                     }
                   }
-                }
+              }, (err) => {
+                console.log(err);
               });
   }
 

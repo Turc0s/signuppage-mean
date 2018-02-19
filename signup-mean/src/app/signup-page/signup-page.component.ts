@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms/src/directives/ng_form';
+import { NgForm } from '@angular/forms';
 import { RegUserService } from '../shared/reg-user.service';
 import { RegUser } from '../shared/reg-user.model';
 
@@ -30,7 +30,6 @@ export class SignupPageComponent implements OnInit {
     }
     this._reguserService.addRegUser(newRegUser)
               .subscribe(regUser => {
-                // this.reguserList.push(regUser);
                 this._reguserService.getRegUsers();
                 regForm.reset();
               });

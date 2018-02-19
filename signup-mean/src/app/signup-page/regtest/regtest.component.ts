@@ -17,8 +17,4 @@ export class RegtestComponent implements OnInit {
   ngOnInit() {
 
   }
-
-  onEdit(reguser: RegUser) {
-    this.router.navigate(["/editreguser/"+ reguser._id]);
-  }
 }

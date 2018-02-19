@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from "@angular/http";
+import { HttpClient } from "@angular/common/http";
 import { RegUser } from "../shared/reg-user.model";
 import "rxjs/Rx";
 
@@ -8,45 +8,41 @@ export class RegUserService {
 
   reguserList: RegUser[];
   selectedRegUser: RegUser = new RegUser();
+  reguserObj: any = {};
 
-  constructor(private http: Http) { }
+  constructor(private httpClient: HttpClient) { }
 
   // retrieving registered users
   getRegUsers() {
-    return this.http.get("http://localhost:3000/api/regusers")
-                .map(res => res.json());
+    return this.httpClient.get("http://localhost:3000/api/regusers");
   }
 
   getSingleRegUser(id: any) {
-    return this.http.get("http://localhost:3000/api/reguser/"+id)
-              .map(res => res.json());
+    return this.httpClient.get("http://localhost:3000/api/reguser/"+id);
   }
 
   // add new registered user
   addRegUser(newRegUser) {
-    var headers = new Headers();
-    headers.append("Content-Type", "application/json");
-    return this.http.post("http://localhost:3000/api/reguser", newRegUser, {headers: headers})
-                .map(res => res.json());
+    return this.httpClient.post("http://localhost:3000/api/reguser", newRegUser);
   }
 
   // update the selected reg user
   updateRegUser(id, reguser) {
-    var headers = new Headers();
-    headers.append("Content-Type", "application/json");
-    return this.http.put("http://localhost:3000/api/reguser/"+id, reguser, {headers: headers})
-                .map(res =>  res.json());
+    return this.httpClient.put("http://localhost:3000/api/reguser/"+id, reguser);
+  }
+
+  updateEditRegUser(id) {
+    return this.httpClient.put("http://localhost:3000/api/reguser/"+id, this.reguserObj);
   }
 
   // delete registered user
   deleteRegUser(id: any) {
-    return this.http.delete("http://localhost:3000/api/reguser/"+id)
-                    .map(res => res.json());
+    return this.httpClient.delete("http://localhost:3000/api/reguser/"+id);
   }
 
   getAllRegUsersService() {
     this.getRegUsers()
-              .subscribe(regusers => {
+              .subscribe((regusers: RegUser[]) => {
                 this.reguserList = regusers;
               });
   }

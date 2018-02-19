@@ -13,27 +13,31 @@ import { RegUserService } from '../../shared/reg-user.service';
 })
 export class TesteditinfoComponent implements OnInit {
 
-  reguser: RegUser;
-
   constructor(private router: Router, 
               private actRoute: ActivatedRoute,
-              private http: Http,
               private _reguserService: RegUserService) { }
 
   ngOnInit() {
-    this.getRegUserDetail(this.actRoute.snapshot.params["id"]);
+    console.log("in ngOnInit reg user details. getRegUserDetail()");
+      this.getRegUserDetail(this.actRoute.snapshot.params['id']);
   }
 
   getRegUserDetail(_id) {
-    // this.http.get("/api/reguser/"+_id)
-    //         .subscribe();
     this._reguserService.getSingleRegUser(_id)
-                .subscribe(data => {
-                  this.reguser = data;
+                .subscribe((data: RegUser) => {
+                  this._reguserService.reguserObj = data;
                 });
   }
 
-
-
+  onDeleteRegUser(id) {
+        this._reguserService.deleteRegUser(id)
+          .subscribe(res => {
+              this.router.navigate(['/signup']);
+            }, (err) => {
+              console.log(err);
+            }
+          );
+          console.log("Book deleted: " + id);
+      }
 
 }

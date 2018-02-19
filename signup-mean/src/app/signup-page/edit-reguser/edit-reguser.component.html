@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Edit Book</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="updateRegUser(_reguserService.reguserObj._id)" #reguserForm="ngForm">
+        <div class="form-group">
+          <label for="name">First Name</label>
+          <input type="text" class="form-control" [(ngModel)]="_reguserService.reguserObj.first_name" name="first_name" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Last Name</label>
+          <input type="text" class="form-control" [(ngModel)]="_reguserService.reguserObj.last_name" name="last_name" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Phone</label>
+          <input type="text" class="form-control" [(ngModel)]="_reguserService.reguserObj.phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!reguserForm.form.valid">Update</button>
+          <button type="button" class="btn btn-default" [routerLink]="['/editreguser', _reguserService.reguserObj._id]">Back</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

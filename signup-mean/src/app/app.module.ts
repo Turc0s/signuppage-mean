@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
-import { HttpModule } from "@angular/http";
 import { RouterModule, Routes } from "@angular/router";
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,6 +16,7 @@ import { ShowinfoComponent } from './main/showinfo/showinfo.component';
 import { ChangeinfoComponent } from './main/changeinfo/changeinfo.component';
 import { TesteditinfoComponent } from './main/testeditinfo/testeditinfo.component';
 import { RegtestComponent } from './signup-page/regtest/regtest.component';
+import { EditReguserComponent } from './signup-page/edit-reguser/edit-reguser.component';
 
 const appRoutes: Routes = [
   { path: "", component: HelloPageComponent },
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
   { path: "signup", component: SignupPageComponent },
   { path: "registeredUsers", component: RegUsersComponent },
   { path: "editreguser/:id", component: TesteditinfoComponent },
+  { path: "edit-reguser/:id", component: EditReguserComponent },
 ];
 
 @NgModule({
@@ -39,11 +41,12 @@ const appRoutes: Routes = [
     ChangeinfoComponent,
     TesteditinfoComponent,
     RegtestComponent,
+    EditReguserComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [RegUserService],

@@ -14,8 +14,9 @@
     <td>{{ regUser.last_name }}</td>
     <td>{{ regUser.phone }}</td>
     <td>
-      <a>
-        <i class="fa fa-angle-double-right fontsizecustom" (click)="onEdit(regUser)"></i>
+      <a [routerLink]="['/editreguser', regUser._id]">
+        <i class="fa fa-address-book fontsize-custom" ></i>
+        <i><b>Details</b></i>
       </a> 
   </td>
   </tr>
