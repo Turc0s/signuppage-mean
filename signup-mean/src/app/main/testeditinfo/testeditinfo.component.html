@@ -1,13 +1,12 @@
-
 <div class="text-center">
-  <h2> {{ reguser.first_name }} - {{ reguser.last_name }}</h2>
+  <!-- <h2> {{ reguser.first_name }} - {{ reguser.last_name }}</h2> -->
+  <hr>
+  <dl class="list">
+    <dt>First Name</dt>
+    <dd>{{ reguser.first_name }}</dd>
+    <dt>Last Name</dt>
+    <dd>{{ reguser.last_name }}</dd>
+    <dt>Phone</dt>
+    <dd>{{ reguser.phone }}</dd>
+  </dl>
 </div>
-<hr>
-<dl class="list">
-  <dt>First Name</dt>
-  <dd>{{ reguser.first_name }}</dd>
-  <dt>Last Name</dt>
-  <dd>{{ reguser.last_name }}</dd>
-  <dt>Phone</dt>
-  <dd>{{ reguser.phone }}</dd>
-</dl>

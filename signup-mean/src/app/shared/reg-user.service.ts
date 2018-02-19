@@ -17,6 +17,11 @@ export class RegUserService {
                 .map(res => res.json());
   }
 
+  getSingleRegUser(id: any) {
+    return this.http.get("http://localhost:3000/api/reguser/"+id)
+              .map(res => res.json());
+  }
+
   // add new registered user
   addRegUser(newRegUser) {
     var headers = new Headers();

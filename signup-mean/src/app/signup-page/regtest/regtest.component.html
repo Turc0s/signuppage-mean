@@ -7,10 +7,16 @@
     <td><b>First Name</b></td>
     <td><b>Last Name</b></td>
     <td><b>Phone</b></td>
+    <td><b>Edit</b></td>
   </tr>
   <tr *ngFor="let regUser of _reguserService.reguserList">
     <td>{{ regUser.first_name }}</td>
     <td>{{ regUser.last_name }}</td>
     <td>{{ regUser.phone }}</td>
+    <td>
+      <a>
+        <i class="fa fa-angle-double-right fontsizecustom" (click)="onEdit(regUser)"></i>
+      </a> 
+  </td>
   </tr>
 </table>

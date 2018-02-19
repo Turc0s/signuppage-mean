@@ -6,3 +6,11 @@
 .red-border {
     border: 1px solid red;
 }
+
+i:hover {
+    cursor: pointer;    
+}
+
+.fontsizecustom {
+    font-size: 2em;
+}

@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ViewEncapsulation } from '@angular/core';
 import { RegUser } from '../../shared/reg-user.model';
+import { RegUserService } from '../../shared/reg-user.service';
 
 @Component({
   selector: 'app-testeditinfo',
@@ -12,21 +13,27 @@ import { RegUser } from '../../shared/reg-user.model';
 })
 export class TesteditinfoComponent implements OnInit {
 
+  reguser: RegUser;
+
   constructor(private router: Router, 
               private actRoute: ActivatedRoute,
-              private http: Http) { }
+              private http: Http,
+              private _reguserService: RegUserService) { }
 
   ngOnInit() {
-    // this.getRegUserDetail(this.actRoute.snapshot.params["id"]);
+    this.getRegUserDetail(this.actRoute.snapshot.params["id"]);
   }
 
-  // getRegUserDetail(_id) {
-  //   this.http.get("/api/reguser/"+_id)
-  //           .subscribe(
-  //             data => {
-                
-  //             }
-  //         );
-  // }
+  getRegUserDetail(_id) {
+    // this.http.get("/api/reguser/"+_id)
+    //         .subscribe();
+    this._reguserService.getSingleRegUser(_id)
+                .subscribe(data => {
+                  this.reguser = data;
+                });
+  }
+
+
+
 
 }
