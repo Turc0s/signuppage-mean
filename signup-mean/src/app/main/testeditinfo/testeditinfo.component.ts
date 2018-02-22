@@ -15,7 +15,7 @@ export class TesteditinfoComponent implements OnInit {
 
   constructor(private router: Router, 
               private actRoute: ActivatedRoute,
-              private _reguserService: RegUserService) { }
+              public _reguserService: RegUserService) { }
 
   ngOnInit() {
     console.log("in ngOnInit reg user details. getRegUserDetail()");

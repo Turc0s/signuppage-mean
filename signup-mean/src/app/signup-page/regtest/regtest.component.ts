@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class RegtestComponent implements OnInit {
 
-  constructor(private _reguserService: RegUserService,
+  constructor(public _reguserService: RegUserService,
               private router: Router,
               private actRoute: ActivatedRoute) { }
 

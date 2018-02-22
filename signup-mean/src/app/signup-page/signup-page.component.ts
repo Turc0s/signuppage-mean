@@ -12,7 +12,7 @@ import { RegUser } from '../shared/reg-user.model';
 export class SignupPageComponent implements OnInit {
 
   constructor(private router: Router,
-              private _reguserService: RegUserService) { }
+              public _reguserService: RegUserService) { }
 
   ngOnInit() {
     this._reguserService.getAllRegUsersService();

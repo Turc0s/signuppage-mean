@@ -9,7 +9,7 @@ import { RegUserService } from '../../shared/reg-user.service';
 })
 export class ShowinfoComponent implements OnInit {
 
-  constructor(private _reguserService: RegUserService) { }
+  constructor(public _reguserService: RegUserService) { }
 
   ngOnInit() {
     this._reguserService.getAllRegUsersService();

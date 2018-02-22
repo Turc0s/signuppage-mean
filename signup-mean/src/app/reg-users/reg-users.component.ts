@@ -11,7 +11,7 @@ export class RegUsersComponent implements OnInit {
 
   regUserList: RegUser[];
 
-  constructor(private _reguserService: RegUserService) { }
+  constructor(public _reguserService: RegUserService) { }
 
   ngOnInit() {
     this.getAllRegUsers();

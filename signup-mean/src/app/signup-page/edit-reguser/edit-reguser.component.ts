@@ -12,7 +12,7 @@ import { RegUser } from '../../shared/reg-user.model';
 export class EditReguserComponent implements OnInit {
 
   constructor(private router: Router, private actRoute: ActivatedRoute,
-    private _reguserService: RegUserService) { }
+    public _reguserService: RegUserService) { }
 
   ngOnInit() {
     this.getRegUserEditDetails(this.actRoute.snapshot.params["id"]);
