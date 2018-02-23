@@ -1,0 +1,40 @@
+
+{
+    "external": {
+      "urls": [
+        {"url": "../node_modules/bootstrap/dist/css/bootstrap.min.css"}
+      ]
+    },
+    "static.ignore": [
+      "\\.js\\.map$"
+    ],
+    "dynamic": {
+      "group": [
+        {
+          "name": "posts-images",
+          "urls": {
+            "https://firebasestorage.googleapis.com/": {
+              "match": "prefix"
+            }
+          },
+          "cache": {
+            "optimizeFor": "performance",
+            "maxAgeMs": 60000,
+            "maxEntries": 40
+          }
+        }
+      ]
+    },
+    "routing": {
+      "index": "/index.html",
+      "routes": {
+        "/": {
+          "prefix": false
+        },
+        "/newsletter": {
+          "prefix": true
+        }
+      }
+    }
+  }
+  

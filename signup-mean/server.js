@@ -5,6 +5,7 @@ var path = require("path");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 var mongoose = require("mongoose");
+var http = require("http");
 
 var app = express();
 
@@ -28,6 +29,12 @@ mongoose.connection.on("error", (err) => {
 // port no.
 const port = 3000;
 
+/**
+ * Create HTTP server.
+ */
+var server = http.createServer(app);
+
+
 // adding middleware - cors
 app.use(cors());
 
@@ -45,6 +52,6 @@ app.get("/", (req, res) => {
     res.send("Hello world");
 });
 
-app.listen(port, () => {
+server.listen(port, () => {
     console.log("Server started at port: " + port);
 });

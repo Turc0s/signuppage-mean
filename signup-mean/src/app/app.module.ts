@@ -4,6 +4,9 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 import { HttpClientModule } from '@angular/common/http';
 
+import { ServiceWorkerModule } from "@angular/service-worker";
+import { environment } from "../environments/environment";  
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HelloPageComponent } from './hello-page/hello-page.component';
@@ -47,7 +50,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ServiceWorkerModule.register("ngsw-worker.js", {enabled: environment.production})
   ],
   providers: [RegUserService],
   bootstrap: [AppComponent]
