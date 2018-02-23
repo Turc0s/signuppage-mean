@@ -1,2 +1,2 @@
 # signuppage-mean
-Signup page with mean backend
+MEAN stack signup page
