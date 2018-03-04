@@ -23,6 +23,7 @@
     "@angular/router": "^5.2.0",
     "@angular/service-worker": "^5.2.6",
     "angular-font-awesome": "^3.1.2",
+    "angular-oauth2-oidc": "^3.1.4",
     "body-parser": "^1.18.2",
     "bootstrap": "^3.3.7",
     "bootswatch": "^4.0.0",

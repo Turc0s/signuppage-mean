@@ -10,7 +10,6 @@ import { environment } from "../environments/environment";
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HelloPageComponent } from './hello-page/hello-page.component';
-import { LoginPageComponent } from './login-page/login-page.component';
 import { MainComponent } from './main/main.component';
 import { RegUsersComponent } from './reg-users/reg-users.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
@@ -21,14 +20,18 @@ import { TesteditinfoComponent } from './main/testeditinfo/testeditinfo.componen
 import { RegtestComponent } from './signup-page/regtest/regtest.component';
 import { EditReguserComponent } from './signup-page/edit-reguser/edit-reguser.component';
 
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { AuthGuard } from './shared/auth/auth.guard.service';
+
 const appRoutes: Routes = [
-  { path: "", component: HelloPageComponent },
-  { path: "loginpage", component: LoginPageComponent },
-  { path: "main", component: MainComponent },
-  { path: "signup", component: SignupPageComponent },
-  { path: "registeredUsers", component: RegUsersComponent },
-  { path: "editreguser/:id", component: TesteditinfoComponent },
-  { path: "edit-reguser/:id", component: EditReguserComponent },
+  { path: "hello", component: HelloPageComponent },
+  { path: '', redirectTo: 'hello', pathMatch: 'full'},
+  { path: "main", component: MainComponent, canActivate: [AuthGuard] },
+  { path: "signup", component: SignupPageComponent, canActivate: [AuthGuard] },
+  { path: "registeredUsers", component: RegUsersComponent, canActivate: [AuthGuard] },
+  { path: "editreguser/:id", component: TesteditinfoComponent, canActivate: [AuthGuard] },
+  { path: "edit-reguser/:id", component: EditReguserComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: 'hello'}
 ];
 
 @NgModule({
@@ -36,7 +39,6 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     HelloPageComponent,
-    LoginPageComponent,
     MainComponent,
     RegUsersComponent,
     SignupPageComponent,
@@ -51,9 +53,10 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+    OAuthModule.forRoot(),
     ServiceWorkerModule.register("ngsw-worker.js", {enabled: environment.production})
   ],
-  providers: [RegUserService],
+  providers: [RegUserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
