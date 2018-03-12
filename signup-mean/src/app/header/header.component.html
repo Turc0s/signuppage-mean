@@ -12,9 +12,6 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <!-- <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <a routerLink="/loginpage">Login</a>
-        </li> -->
         <li routerLinkActive="active">
           <a routerLink="signup">SignUp</a>
         </li>
@@ -23,6 +20,9 @@
         </li>
         <li routerLinkActive="active">
           <a routerLink="registeredUsers">Reg</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="oauthService.hasValidIdToken()">
+          <a routerLink="signinuser">SigninUser</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
